@@ -1,7 +1,24 @@
-import Header from './components/Header.jsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './components/header.jsx'
+import Footer from './components/Footer.jsx'
+import Home from './pages/Home.jsx';
 function App() {
-  return(
-    <Header/>
+  return (
+    <BrowserRouter>
+      <Header />
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/about" element={<About />} />
+        <Route path="/portfolio" element={<Portfolio />} /> */}
+        
+        {/* 404-sida (om du vill ha en) 
+        <Route path="*" element={<NotFound />} /> 
+        */}
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
   );
 };
 
