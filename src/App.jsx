@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/header.jsx'
 import Footer from './components/Footer.jsx'
 
@@ -9,26 +9,21 @@ import Contact from './pages/Contact.jsx';
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Header />
       
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/project1" element={<Portfolio />} />
-        
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        
-        {/* 404-sida (om du vill ha en) 
-        <Route path="*" element={<NotFound />} /> 
-        */}
+        {/* Optionally add a 404 route here */}
       </Routes>
 
       <Footer />
-    </BrowserRouter>
+    </>
   );
-};
+}
 
-export default App
+export default App;
