@@ -1,32 +1,55 @@
-export default function Footer(){
-    return(
-        <footer>
-        <div class="footer-container">
-          <div class="about-footer">
-            <h3>ABOUT ME</h3>
-            <p>
-              Welcome to my website! I'm Noah Hoff, a developer and designer passionate about modern web experiences.
-              I specialize in responsive design and intuitive digital solutions.
-              <a href="about-dropdown/about-me.html" class="read-more">READ MORE</a>
-            </p>
-          </div>
-          <div class="contact-social">
-            <div class="contact-follow">
-              <a href="contact.html" class="contact-me">CONTACT ME</a>
-              <span class="divider">//</span>
-              <span class="follow">FOLLOW ME:</span>
-            </div>
-            <ul class="social">
-              <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
-              <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            </ul>
-          </div>
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+export default function Footer() {
+  return (
+    <footer>
+      <div className="footer-container">
+        <div className="about-footer">
+          <h3>ABOUT ME</h3>
+          <p>
+            Welcome to my website! I'm Noah Hoff, a developer and designer passionate about modern web experiences.
+            I specialize in responsive design and intuitive digital solutions.
+            <NavLink to="/about/about-me" className="read-more">
+              READ MORE
+            </NavLink>
+          </p>
         </div>
-        <div class="footer-bottom">
-          &copy; 2025 Noah Hoff. All rights reserved.
+        <div className="contact-social">
+          <div className="contact-follow">
+            <NavLink to="/contact" className="contact-me">
+              CONTACT ME
+            </NavLink>
+            <span className="divider">//</span>
+            <span className="follow">FOLLOW ME:</span>
+          </div>
+          <ul className="social">
+            <li>
+              <a href="https://se.linkedin.com/in/noah-hoff-aa86b1326">
+                <i className="fa-brands fa-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/NoahtlHoff">
+                <i className="fa-brands fa-github"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/noah.hoff.5/">
+                <i className="fa-brands fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/noahtlhoff">
+                <i className="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
         </div>
-      </footer>
-    );
+      </div>
+      <div className="footer-bottom">
+        &copy; 2025 Noah Hoff. All rights reserved.
+      </div>
+    </footer>
+  );
 }
