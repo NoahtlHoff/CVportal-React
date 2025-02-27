@@ -1,141 +1,69 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-// Manually define which repo names should be considered pinned.
-const pinnedRepoNames = [
-  "Gymnasium - School DB / Console App",
-  "Numbers Game - Can you guess the right number?"
-];
+export default function Projects() {
+  const [projects, setProjects] = useState([]);
+  const [selectedProject, setSelectedProject] = useState(null);
 
-export async function getStaticProps() {
-  // Fetch your repositories from GitHub using the REST API.
-  // Adjust the username ("NoahtlHoff") as needed.
-  const res = await fetch("https://api.github.com/users/NoahtlHoff/repos");
-  const repos = await res.json();
-
-  // You might want to filter out forks or sort as needed here.
-
-  return {
-    props: {
-      repos,
-    },
-    revalidate: 60, // re-generate every minute (adjust as needed)
-  };
-}
-
-export default function Portfolio({ repos }) {
-  const [selectedRepo, setSelectedRepo] = useState(null);
-  const [readme, setReadme] = useState("");
-
-  // When a card is clicked, show the modal and load the README.
-  const handleCardClick = async (repo) => {
-    setSelectedRepo(repo);
-    try {
-      // Fetch the README from GitHub's API. Note: This returns a base64-encoded string.
-      const response = await fetch(
-        `https://api.github.com/repos/NoahtlHoff/${repo.name}/readme`
-      );
-      if (response.ok) {
-        const data = await response.json();
-        const decoded = atob(data.content);
-        setReadme(decoded);
-      } else {
-        setReadme("No README available.");
-      }
-    } catch (error) {
-      console.error("Error fetching README:", error);
-      setReadme("No README available.");
-    }
-  };
-
-  // Close the modal.
-  const closeModal = () => {
-    setSelectedRepo(null);
-    setReadme("");
-  };
-
-  // Separate pinned repositories from the rest.
-  const pinnedRepos = repos.filter((repo) =>
-    pinnedRepoNames.includes(repo.name)
-  );
-  const otherRepos = repos.filter(
-    (repo) => !pinnedRepoNames.includes(repo.name)
-  );
+  useEffect(() => {
+    fetch("https://api.github.com/users/NoahtlHoff/repos")
+      .then((response) => response.json())
+      .then((data) => {
+        setProjects(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
-    <main>
-      <h1>PORTFOLIO</h1>
-
-      {/* Pinned Projects Row */}
-      {pinnedRepos.length > 0 && (
-        <section className="pinned-cards">
-          <h2>Pinned Projects</h2>
-          <div className="cards-row">
-            {pinnedRepos.map((repo) => (
-              <div
-                key={repo.id}
+    <>
+      <main>
+      <section className="portfolio-section">
+          <h1>PORTFOLIO</h1>
+          <div className="portfolio">
+            {projects.map((p) => (
+              <article
                 className="card"
-                onClick={() => handleCardClick(repo)}
-                style={{ cursor: "pointer" }}
+                key={p.name}
+                onClick={() => setSelectedProject(p)}
               >
-                <h3>{repo.name}</h3>
-                <p>Language: {repo.language || "N/A"}</p>
-                {/* Prevent card click when clicking the GitHub link */}
-                <a
-                  href={repo.html_url}
-                  onClick={(e) => e.stopPropagation()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub Link
-                </a>
-              </div>
+                {/* <div className="card-head">
+                  <img
+                    src="https://picsum.photos/200/300"
+                    alt="Project thumbnail"
+                  />
+                </div> */}
+                <div className="card-body">
+                  <h3>{p.name}</h3>
+                  <p>Language: {p.language || "Unknown language"}</p>
+                  <a
+                    href={p.html_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    View on GitHub
+                  </a>
+                </div>
+              </article>
             ))}
           </div>
         </section>
-      )}
+      </main>
 
-      {/* All Projects Rows */}
-      <section className="all-cards">
-        <h2>All Projects</h2>
-        <div className="cards-row">
-          {otherRepos.map((repo) => (
-            <div
-              key={repo.id}
-              className="card"
-              onClick={() => handleCardClick(repo)}
-              style={{ cursor: "pointer" }}
-            >
-              <h3>{repo.name}</h3>
-              <p>Language: {repo.language || "N/A"}</p>
-              <a
-                href={repo.html_url}
-                onClick={(e) => e.stopPropagation()}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub Link
-              </a>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Modal Popup */}
-      {selectedRepo && (
-        <div className="modal" onClick={closeModal}>
-          <div
-            className="modal-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button className="close" onClick={closeModal}>
+      {selectedProject && (
+        <div className="modal" onClick={() => setSelectedProject(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close" onClick={() => setSelectedProject(null)}>
               &times;
             </button>
-            <h2>{selectedRepo.name}</h2>
-            <div className="readme">
-              <pre>{readme}</pre>
-            </div>
+            <h2>{selectedProject.name}</h2>
+            <p>
+              {selectedProject.description ||
+                "No additional details available."}
+            </p>
             <a
-              href={selectedRepo.html_url}
+              href={selectedProject.html_url}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -144,6 +72,6 @@ export default function Portfolio({ repos }) {
           </div>
         </div>
       )}
-    </main>
+    </>
   );
 }

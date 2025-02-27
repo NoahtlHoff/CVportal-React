@@ -260,7 +260,6 @@ footer {
 /* Base style for main container on all pages */
 main {
   min-height: 90vh;
-  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
   box-sizing: border-box;
@@ -323,12 +322,15 @@ main.contact form button:hover {
   background-color: #b26a1f; /* a slightly darker shade */
 }
 
+.portfolio-section {
+  margin: 0 auto;   /* center if desired */
+  padding: 2rem;
+}
 
 /* Portfolio page using a grid for cards */
-.portfolio{
-  text-align: center;
+.portfolio {
+  padding: 2rem;
   display: grid;
-  margin: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
 }
@@ -372,6 +374,55 @@ color: var(--t-color);
 }
 .card:hover {
   transform: translateY(-5px);
+}
+/* Modal overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: var(--header-color); /* Or choose another color */
+  color: var(--t-color);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80vw;    /* Adjust to desired width */
+  max-height: 80vh;   /* Adjust to desired height */
+  overflow-y: auto;   /* Enable scrolling if content is too tall */
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Close button for modal */
+.modal .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--t-color);
+  cursor: pointer;
+}
+
+/* Optional: Style the modal content headings and paragraphs */
+.modal-content h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 
