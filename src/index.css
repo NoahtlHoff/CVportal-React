@@ -261,7 +261,6 @@ footer {
 main {
   min-height: 90vh;
   margin: 0 auto;
-  padding: 2rem;
   box-sizing: border-box;
 }
 main h1 {
@@ -323,6 +322,7 @@ main.contact form button:hover {
 }
 
 .portfolio-section {
+  max-width: 90%;
   margin: 0 auto;   /* center if desired */
   padding: 2rem;
 }
