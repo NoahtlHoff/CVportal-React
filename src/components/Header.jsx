@@ -48,7 +48,7 @@ export default function Header() {
                   to="/portfolio/project1"
                   className={({ isActive }) => (isActive ? 'active' : '')}
                 >
-                  PINNED PROJECTS
+                  FEATURED
                 </NavLink>
               </li>
               <li>
@@ -57,7 +57,7 @@ export default function Header() {
                   className={({ isActive }) => (isActive ? 'active' : '')}
                 >
                   
-                  SMALL PROJECTS
+                  OTHER
                 </NavLink>
               </li>
             </ul>
