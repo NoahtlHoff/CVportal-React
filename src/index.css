@@ -86,8 +86,8 @@ main.PDF-page h1 {
 .Regular-Page {
   max-width: 800px;
   text-align: center;
-  /* margin: 0 auto;
-  padding: 2rem; */
+  margin: 0 auto;
+  padding: 2rem;
   background-color: var(--bg-color, #373737); /* fallback if variable isn't set */
   color: var(--t-color, #dbdbdb);
 }

@@ -1,6 +1,7 @@
 // Header.jsx
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 export default function Header() {
   return (
@@ -43,22 +44,13 @@ export default function Header() {
             </NavLink>
 
             <ul className="dropdown-menu">
+            <HashLink smooth to="/portfolio/#featured">
+    FEATURED
+  </HashLink>
               <li>
-                <NavLink 
-                  to="/portfolio/project1"
-                  className={({ isActive }) => (isActive ? 'active' : '')}
-                >
-                  FEATURED
-                </NavLink>
-              </li>
-              <li>
-                <NavLink 
-                  to="/portfolio/project2"
-                  className={({ isActive }) => (isActive ? 'active' : '')}
-                >
-                  
-                  OTHER
-                </NavLink>
+              <HashLink smooth to="/portfolio/#other">
+    OTHER
+  </HashLink>
               </li>
             </ul>
           </li>
@@ -88,14 +80,6 @@ export default function Header() {
                   className={({ isActive }) => (isActive ? 'active' : '')}
                 >
                   ABOUT ME
-                </NavLink>
-              </li>
-              <li>
-                <NavLink 
-                  to="/about/website-doc"
-                  className={({ isActive }) => (isActive ? 'active' : '')}
-                >
-                  ABOUT WEBSITE
                 </NavLink>
               </li>
             </ul>

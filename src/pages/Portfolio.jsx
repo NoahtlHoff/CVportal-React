@@ -29,7 +29,7 @@ export default function Projects() {
   return (
     <>
       <main>
-        <section className="portfolio-section">
+        <section id="featured" className="portfolio-section">
           <h1>FEATURED PROJECTS</h1>
           <div className="portfolio">
             {featuredProjects.map((p) => (
@@ -55,7 +55,7 @@ export default function Projects() {
           </div>
         </section>
 
-        <section className="portfolio-section">
+        <section id="other" className="portfolio-section">
           <h1>OTHER PROJECTS</h1>
           <div className="portfolio">
             {otherProjects.map((p) => (
