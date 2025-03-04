@@ -2,9 +2,8 @@ import React from 'react';
 function About() {
   return (
     <main>
-      <section className="Regular-Page">
-      <h1>NOAH HOFF</h1>
-        <h2>ABOUT ME</h2>
+      <section id="about-me" className="Regular-Page">
+        <h1>ABOUT ME</h1>
         <p>
           Hello, I'm Noah Hoff — a fullstack .NET developer student passionate about technology, problem-solving,
           and continuous learning. I worked for many years in the Foodmarket industry, which I loved, but felt it was time for a change.
@@ -37,6 +36,50 @@ function About() {
           I live in Trångsund with my girlfriend of 5 years, and our crazy cat Luna.
         </p>
       </section>
+
+      <section id="cv" className="cv-section">
+    <h1>Fullstack Dev.</h1>
+    <p>
+      Dedicated full-stack developer in training with a solid technical background and real-world leadership experience from retail operations. I am currently expanding my expertise in Microsoft .NET to build reliable, efficient software solutions.
+    </p>
+    <p><strong>Contact me:</strong></p>
+    <p>Phone: (+46) 73-969 48 04</p>
+    <p>Email: <a href="mailto:Noah.Hoff@outlook.com">Noah.Hoff@outlook.com</a></p>
+ 
+    <h3 className="section-title">TECHNICAL SKILLS</h3>
+    <p><strong>Programming Languages &amp; Frameworks:</strong> C#, Entity Framework, ASP.NET Core, SQL, HTML/CSS, JavaScript, REACT</p>
+    <p><strong>Tools &amp; Environments:</strong> VS/VSCODE, SSMS, Github, Git</p>
+    <p><strong>Other Software:</strong> Microsoft Word, PowerPoint, basic Excel skills, basic Adobe Photoshop.</p>
+
+    <h3 className="section-title">RELEVANT EXPERIENCE</h3>
+    <h4>Shift Supervisor (2016 – Present)</h4>
+    <p><strong>Hemköp, Huddinge</strong></p>
+    <ul>
+      <li>Responsible for evening operations and closing procedures, including supervision of staff, handling daily financials, ensuring store security, and addressing any customer or operational issues.</li>
+      <li>Develop strong problem-solving and leadership skills while maintaining excellent customer service standards.</li>
+    </ul>
+    <h4>Machine Operator (Aug 2013 – Dec 2015)</h4>
+    <p><strong>Hallbergs-Sekrom, Täby</strong></p>
+    <ul>
+      <li>Managed a personal workstation, loading and maintaining machines, ensuring cleanliness and efficiency.</li>
+    </ul>
+    <h4>Entrepreneurship &amp; Projects</h4>
+    <ul>
+      <li>Organized school events for younger students, handling logistics and team coordination.</li>
+      <li>Completed a course in entrepreneurship covering basic business economics, teamwork under pressure, and public speaking.</li>
+    </ul>
+
+    <h3 className="section-title">EDUCATION</h3>
+    <h4>Ongoing: .NET Full-Stack Development</h4>
+    <p>Comprehensive study of C#, ASP.NET Core, Entity Framework, SQL, and front-end frameworks.</p>
+    <h4>Aug 2012 – Jun 2015: Upper Secondary Education, Åva Gymnasium – Täby</h4>
+    <p>Technical Program with a focus on Information and Media Technology. Courses included Programming 1, Network Programming, and Web Development (HTML, CSS).</p>
+    <h4>Aug 2002 – Jul 2012: Primary Education, Bålbroskolan – Rimbo</h4>
+
+    <p>For further inquiries, please reach out via phone or email.</p>
+    <p>Sincerely,</p>
+    <p>Noah Hoff</p>
+  </section>
     </main>
   );
 }

@@ -135,6 +135,41 @@ main.PDF-page h1 {
   color: var(--strong-color);
 }
 
+.cv-section {
+  border-style: solid;
+  border-color: black;
+  padding: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 40px;
+  background-color: white;
+  font-size: 16px;
+  line-height: 1.6;
+  color: black;
+}
+
+.cv-section h1,
+.cv-section h3,
+.cv-section h4 {
+  margin-bottom: 10px;
+}
+
+.cv-section p {
+  margin-bottom: 15px;
+}
+
+.cv-section ul {
+  margin: 0 0 20px 20px;
+  padding: 0;
+}
+
+.cv-section .section-title {
+  border-bottom: 2px solid var(--header-color);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
 /* Responsive adjustments for smaller screens */
 @media (max-width: 600px) {
   .Regular-Page {

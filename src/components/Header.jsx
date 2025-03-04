@@ -66,21 +66,15 @@ export default function Header() {
             </NavLink>
 
             <ul className="dropdown-menu">
-              <li>
-                <NavLink 
-                  to="/about/cv"
-                  className={({ isActive }) => (isActive ? 'active' : '')}
-                >
-                  CV
-                </NavLink>
-              </li>
-              <li>
-                <NavLink 
-                  to="/about/about-me"
-                  className={({ isActive }) => (isActive ? 'active' : '')}
-                >
-                  ABOUT ME
-                </NavLink>
+            <li>
+              <HashLink smooth to="/about/#about-me">
+                ABOUT ME
+              </HashLink>
+            </li>
+            <li>
+              <HashLink smooth to="/about/#cv">
+                CV
+              </HashLink>
               </li>
             </ul>
           </li>
