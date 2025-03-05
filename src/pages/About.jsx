@@ -1,4 +1,5 @@
 import React from 'react';
+import cvData from '../components/cvData.json';
 function About() {
   return (
     <main>
@@ -38,6 +39,42 @@ function About() {
       </section>
 
       <section id="cv" className="cv-section">
+        <h1>Fullstack Dev.</h1>
+        <p>
+          Dedicated full-stack developer in training with a solid technical background and real-world leadership experience from retail operations. I am currently expanding my expertise in Microsoft .NET to build reliable, efficient software solutions.
+        </p>
+        <p><strong>Contact me:</strong></p>
+        <p>Phone: (+46) 73-969 48 04</p>
+        <p>Email: <a href="mailto:Noah.Hoff@outlook.com">Noah.Hoff@outlook.com</a></p>
+      
+        <h3 className="section-title">TECHNICAL SKILLS</h3>
+        <p><strong>Programming Languages & Frameworks:</strong> C#, Entity Framework, ASP.NET Core, SQL, HTML/CSS, JavaScript, REACT</p>
+        <p><strong>Tools & Environments:</strong> VS/VSCODE, SSMS, Github, Git</p>
+        <p><strong>Other Software:</strong> Microsoft Word, PowerPoint, basic Excel skills, basic Adobe Photoshop.</p>
+
+        <h3 className="section-title">RELEVANT EXPERIENCE</h3>
+        {cvData.experience.map((job, index) => (
+          <div key={index}>
+            <h4>{job.title}</h4>
+            {job.company && <p><strong>{job.company}</strong></p>}
+            <p>{job.description}</p>
+          </div>
+        ))}
+
+        <h3 className="section-title">EDUCATION</h3>
+        {cvData.education.map((edu, index) => (
+          <div key={index}>
+            <h4>{edu.title}</h4>
+            {edu.description && <p>{edu.description}</p>}
+          </div>
+        ))}
+
+        <p>For further inquiries, please reach out via phone or email.</p>
+        <p>Sincerely,</p>
+        <p>Noah Hoff</p>
+      </section>
+
+      {/* <section id="cv" className="cv-section">
     <h1>Fullstack Dev.</h1>
     <p>
       Dedicated full-stack developer in training with a solid technical background and real-world leadership experience from retail operations. I am currently expanding my expertise in Microsoft .NET to build reliable, efficient software solutions.
@@ -79,7 +116,7 @@ function About() {
     <p>For further inquiries, please reach out via phone or email.</p>
     <p>Sincerely,</p>
     <p>Noah Hoff</p>
-  </section>
+  </section> */}
     </main>
   );
 }

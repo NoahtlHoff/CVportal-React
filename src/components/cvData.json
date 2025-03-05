@@ -1,0 +1,34 @@
+{
+    "education": [
+      {
+        "title": "Ongoing: .NET Full-Stack Development",
+        "description": "Comprehensive study of C#, ASP.NET Core, Entity Framework, SQL, and front-end frameworks."
+      },
+      {
+        "title": "Aug 2012 - Jun 2015: Upper Secondary Education, Åva Gymnasium - Täby",
+        "description": "Technical Program with a focus on Information and Media Technology. Courses included Programming 1, Network Programming, and Web Development (HTML, CSS)."
+      },
+      {
+        "title": "Aug 2002 - Jul 2012: Primary Education, Bålbroskolan - Rimbo",
+        "description": ""
+      }
+    ],
+    "experience": [
+      {
+        "title": "Shift Supervisor (2016 - Present)",
+        "company": "Hemköp, Huddinge",
+        "description": "Responsible for evening operations and closing procedures, including supervision of staff, handling daily financials, ensuring store security, and addressing any customer or operational issues."
+      },
+      {
+        "title": "Machine Operator (Aug 2013 - Dec 2015)",
+        "company": "Hallbergs-Sekrom, Täby",
+        "description": "Managed a personal workstation, loading and maintaining machines, ensuring cleanliness and efficiency."
+      },
+      {
+        "title": "Entrepreneurship & Projects",
+        "company": "",
+        "description": "Organized school events for younger students, handling logistics and team coordination. Completed a course in entrepreneurship covering basic business economics, teamwork under pressure, and public speaking."
+      }
+    ]
+  }
+  
