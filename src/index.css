@@ -267,6 +267,13 @@ main.home {
   text-align: center;
 }
 
+main.contact{
+  min-height: 90vh;
+  max-width: 800px;
+}
+main.contact h1{
+  padding: 2rem;
+}
 main.contact form {
   display: flex;
   flex-direction: column;

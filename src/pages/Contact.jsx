@@ -3,7 +3,7 @@ import React from 'react';
 export default function Contact() {
   return (
     <main className="contact">
-      <h1>Contact Me</h1>
+      <h1>CONTACT ME</h1>
       <p>
         If you have any questions, suggestions, or just want to say hello, please fill out the form below and I'll get back to you as soon as possible.
       </p>
