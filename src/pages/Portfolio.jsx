@@ -108,7 +108,7 @@ export default function Projects() {
 
       {selectedProject && (
         <div className="modal" onClick={() => setSelectedProject(null)}>
-          <div
+          <div 
             className="modal-content"
             onClick={(e) => e.stopPropagation()}
           >
