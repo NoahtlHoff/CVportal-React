@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
+import PulseLoader from "react-spinners/PulseLoader";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
-
+  const [loading, setLoading] = useState(true);
   // List of featured project names (or use IDs, topics, etc.)
   const featuredProjectNames = ["Leetcode", "Gymnasium", "CVportal"];
 
@@ -11,13 +12,36 @@ export default function Projects() {
     fetch("https://api.github.com/users/NoahtlHoff/repos")
       .then((response) => response.json())
       .then((data) => {
-        setProjects(data);
+        setTimeout(() => {
+          setProjects(data);
+        setLoading(false);
+        }, 300);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
+  if(loading){
+    return (
+      <main>
+        <section id="featured" className="portfolio-section">
+          <h1>FEATURED PROJECTS</h1>
+          <h1 >
+          <PulseLoader />
+          </h1>
+          
+        </section>
+
+        <section id="other" className="portfolio-section">
+          <h1>OTHER PROJECTS</h1>
+          <h1>
+          <PulseLoader />
+          </h1>
+        </section>
+      </main>
+    );
+  }
   // Filter projects into featured and others
   const featuredProjects = projects.filter((p) =>
     featuredProjectNames.includes(p.name)

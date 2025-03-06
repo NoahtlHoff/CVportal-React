@@ -14,10 +14,9 @@ export default function Header() {
           </NavLink>
         </div>
 
-        <label className="switch">
-          {/* If you have a theme toggle, you'd place the <input> here */}
+        {/* <label className="switch">
           <span className="slider round"></span>
-        </label>
+        </label> */}
       </div>
       
       <nav className="main-nav">
